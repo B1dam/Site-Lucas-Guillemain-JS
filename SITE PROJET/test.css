@@ -1,0 +1,306 @@
+html, body {
+    height: 100%; /* Assure que le body prend toute la hauteur */
+    margin: 0; /* Enlève les marges par défaut */
+}
+
+/* Le body prend toute la hauteur disponible */
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: rgb(255, 255, 255);
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Le conteneur principal prend toute la hauteur restante */
+.conteneur {
+    flex: 1; /* Cela pousse le footer en bas */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Équilibre l'espace entre les éléments */
+}
+
+
+.Haut {     /*bannière qui sert de fond en haut*/
+    margin-left: 0px;  
+    display: flex;
+    justify-content: right;   /*pour la mettre au milieu a la base, mais elle défile au final*/
+    background-image: url("Sans\ titre-1.png");
+    background-color: rgb(0, 0, 0);  
+    height: 230px;
+    width: 100%;       /*taille, bannière fais sur photoshop*/
+    animation: slide 50s linear infinite;  /*vu sur un site internet, pour que la bannière défile à l'infini*/
+    z-index: 10;
+}
+
+@keyframes slide {   /*pour que le background glisse (animation)*/
+    0% {
+        background-position: 100% 0;  /*commence à l'extreme gauche*/
+    }
+    100% {
+        background-position: -100% 0;  /*finit à l'extrême droite*/
+    }
+}
+    
+#image {
+    width: 500px;
+    position: absolute;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    pointer-events: none;  /* Rendre le logo non-interactif */
+}
+
+
+  
+
+
+
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 10px 40px;
+}
+
+li.tab {
+    padding: 15px 30px; /* Augmenter la taille des boutons */
+    font-size: 18px; /* Agrandir la police */
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    margin-right: 10px; /* Espacement plus large */
+    background-color: #f9f9f9;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+}
+
+
+li.tab:hover {
+    background-color: #e0e0e0;
+}
+
+li.tab-active {
+    background-color: #ffffff;
+    color: #333;
+    border-bottom: 1px solid #ffffff;
+    font-weight: bold;
+}
+
+.content {
+    padding: 30px; /* Augmenter les espacements internes */
+    border: 1px solid #ccc;
+    margin-top: -1px; /* Pour fusionner avec les tabs */
+    display: none;
+    background-color: #f9f9f9;
+    color: #333;
+    max-height: 80vh; /* Limiter la hauteur pour que le contenu soit visible sans débordement */
+    overflow-y: auto; /* Permettre un défilement si nécessaire */
+}
+
+
+p{
+    font-size: 25px;
+}
+
+p {
+    margin-bottom: 40px;
+}
+
+
+.content.active {
+    display: block;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+
+
+
+.hidden {
+    display: none;
+}
+
+.switch{
+    font-size: 60px;
+    display: flex;
+    width: 14px; 
+    height: 6px;  
+    justify-content: center;  
+    align-items: center;                    /*meme propriété que pour le bouton discord*/
+    position: absolute;
+    top: 260px;
+    left: 500px ;
+}
+
+/* Styles pour le mode sombre */
+.dark-theme {
+    background-color: black;  /* Fond sombre */
+    color: #ffffff; /* Texte clair */
+}
+
+.dark-theme .tab {
+    background-color: #333; /* Fond sombre pour les tabs */
+    color: #ffffff; /* Texte clair pour les tabs */
+}
+
+.dark-theme .tab:hover {
+    background-color: #1e1e1e; /* Légère nuance de gris plus sombre au survol */
+}
+
+.dark-theme .tab-active {
+    background-color: #1e1e1e;  /* Inversion du fond actif */
+    color: #ffffff;
+    border-bottom: 1px solid #444;  /* Inversion de la bordure active */
+}
+
+.dark-theme .content {
+    background-color: #1e1e1e;  /* Fond sombre */
+    color: #ffffff; /* Texte clair */
+    border-color: #555; /* Bordure plus sombre */
+}
+
+
+@media (max-width: 600px) {
+    .tabs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tab {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .content {
+        padding: 20px;
+        font-size: 18px; /* Ajuster la taille des polices pour les petits écrans */
+    }
+}
+
+
+/* Formulaire */
+form {
+    border: 1px solid rgba(153, 153, 153, 0.6);
+}
+
+form > div {
+    margin: 30px 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Correction pour le mode sombre : labels en blanc */
+.dark-theme label {
+    color: #ffffff;
+}
+
+input {
+    height: 20px;
+    width: 40%;
+    border: 2px solid rgba(153, 153, 153, 0.3); /* Bordure claire par défaut en mode clair */
+    transition: border-color 0.3s, background-color 0.3s;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Bordure plus foncée lors du focus en mode clair */
+input:focus {
+    outline: none;
+    border-color: rgba(153, 153, 153, 0.8); /* Augmenter l'opacité lors du focus */
+}
+
+/* Ajout d'une bordure visible en mode clair et sombre */
+input.valid {
+    border-color: rgba(0, 255, 0, 1);
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+input.invalid {
+    border-color: rgba(255, 0, 0, 0.2);
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.dark-theme input {
+    color: #ffffff;  
+    background-color: #333;  
+    border: 2px solid rgba(255, 255, 255, 0.3); 
+}
+
+.dark-theme input:focus {
+    border-color: rgba(255, 255, 255, 0.8); 
+}
+
+.dark-theme input.valid {
+    background-color: rgba(28, 195, 23, 0.3);
+}
+
+.dark-theme input.invalid {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+/* Messages d'erreur et de succès */
+.message-error ul {
+    background-color: rgba(255, 0, 0, 0.3);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.message-success {
+    background-color: rgba(0, 255, 0, 0.1);
+    border: 1px solid rgba(0, 255, 0, 1);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.footer {
+    background-color: #d1cccc;
+    color: rgb(38, 36, 36);
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    margin-top: auto; 
+}
+
+body.dark-theme .footer {
+    background-color: rgb(38, 36, 36);
+    color: #d1cccc;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer a {
+    color: rgb(0, 162, 255);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+.content {
+    min-height: 100vh; 
+    flex: 1;
+}

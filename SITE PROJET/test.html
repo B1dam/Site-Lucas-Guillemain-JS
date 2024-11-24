@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation & Tabs</title>
+    <link rel="stylesheet" href="test.css">
+    <style>
+        /* Ajout de styles pour les tabs horizontaux */
+        
+    </style>
+</head>
+<body id="page">
+
+    <header class="header"> 
+        <section class="Haut">
+            <<div class="titre">
+                <a href="site.html">
+                    <img src="logo.png" alt="logo" id="image"> 
+                </a>
+            </div>
+        </section>
+
+        
+            </header>
+    
+    <button class="switch" type="button" id="switchTheme">🌚</button>
+
+    <ul>
+        <li class="tab tab-infos">Infos</li>
+        <li class="tab tab-formulaire">Formulaire</li>
+        <li class="tab tab-autres">Autres</li>
+    </ul>
+
+    <div class="content infos">
+        <p> Bienvenue sur notre site de recettes simples et délicieuses, spécialement conçues pour les étudiants !</p> 
+         <p>Que vous soyez pressé entre les cours ou que vous n'ayez pas beaucoup d'ingrédients sous la main, nous avons des idées de repas rapides, savoureux et faciles à réaliser.</p>  <p>
+            En tant qu'étudiant, je sais à quel point il peut être difficile de trouver des repas équilibrés et rapides à préparer. C'est pourquoi ce site a été créé : pour vous aider à manger de façon variée et nourrissante, sans passer des heures en cuisine.</p>
+             <p> Découvrez nos recettes, suivez les instructions simples et régalez-vous avec des plats faits maison qui conviennent à tous les budgets !</p>
+    </div>
+    <div class="content formulaire">
+        <div class="message-error">
+            <ul></ul>
+        </div>
+        <div class="message-success hidden">
+            Formulaire envoyé !
+        </div>
+        <form action="" method="POST">
+            <div>
+                <label for="pseudo">Pseudo</label>
+                <input type="text" name="pseudo" id="pseudo">
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+
+            <div>
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password" id="password">
+            </div>
+
+            <div>
+                <label for="password2">Confirmer le mot de passe</label>
+                <input type="password" name="password2" id="password2">
+            </div>
+
+            <button type="submit">S'inscrire</button>
+        </form>
+    </div>
+    <div class="content autres">
+        <p>Bienvenue sur l'onglet Autres. Ajoutez ici un contenu divers ou supplémentaire.</p>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; Cook Fast, Cook great. </p>
+        <p>Contact: <a href="mailto:lucas.guillemain@edu.devinci.fr">lucas.guillemain@edu.devinci.fr</a></p>
+   
+       </footer>
+
+    <script src="test.js"></script>
+</body>
+</html>

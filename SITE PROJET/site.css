@@ -1,0 +1,475 @@
+.dark-theme {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+* {
+    font-size: 16px;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+body {
+    transform: scale(0.8);              /* Réduit à 80% */
+    transform-origin: top left;          /* Point d'origine du zoom : coin supérieur gauche */
+    width: 125vw;                    /* Ajuste la largeur pour compenser le zoom à 80% */
+    height: 125vh;                   /* Ajuste la hauteur pour compenser */
+    overflow-x: hidden;              /* Empêche le débordement horizontal */
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+.main {
+    flex-grow: 1;   /* Permet à .main de prendre tout l'espace restant entre le header et le footer */
+}
+
+.conteneur {
+    min-height: calc(100vh / 0.8);  /* S'adapte à la transformation en calculant la hauteur */
+    display: flex;
+    flex-direction: column;
+}
+
+.sorties {      /*le texte "denieres sorties"*/
+    font-size: larger;  /*augmenter la taille du texte */
+    position: absolute; 
+    color: rgb(255, 255, 255);
+    top: 250px;
+    left: 30px;    
+    display: flex;  
+    align-items: center;    /*pour que le texte soit au dessus de la bordure du dessous*/
+     border-bottom: solid 2px; height: 40px;  width: 1450px;  /*dimensions de la bordure du dessous*/
+}
+
+
+
+
+
+.Haut {     /*bannière qui sert de fond en haut*/
+    margin-left: 0px;  
+    display: flex;
+    justify-content: right;   /*pour la mettre au milieu a la base, mais elle défile au final*/
+    background-image: url("Sans\ titre-1.png");
+    background-color: rgb(0, 0, 0);  
+    height: 230px;
+    width: 100%;       /*taille, bannière fais sur photoshop*/
+    animation: slide 50s linear infinite;  /*vu sur un site internet, pour que la bannière défile à l'infini*/
+}
+
+
+
+@keyframes slide {   /*pour que le background glisse (animation)*/
+    0% {
+        background-position: 100% 0;  /*commence à l'extreme gauche*/
+    }
+    100% {
+        background-position: -100% 0;  /*finit à l'extrême droite*/
+    }
+}
+    
+    #image{   /*logo "manga vision"*/
+        width: 500px;
+        position: absolute;
+        margin-top: 0%;
+        top: 0%;
+        left: 0%;   /*toutes les fonctions pour pouvoir le placer en haut a gauche */
+    }
+
+    
+
+
+    .discord {          /*le bouton discord*/
+    font-size: 20px;    /*taille du texte */
+    display: flex;
+    width: 14%; 
+    height: 6%;  
+    justify-content: center;  /*pour placer le texte au centre horizontalement*/
+    align-items: center;    /*pour placer le texte au centre verticalement*/
+    position: absolute;
+    top: 250px;
+    left: 1500px ;          /*emplacement*/
+}
+
+    .twitter {          /*bouton twitter à droite du bouton discord*/
+        font-size: 20px;
+        display: flex;
+        width: 14%; 
+        height: 6%;  
+        justify-content: center;  
+        align-items: center;                    /*meme propriété que pour le bouton discord*/
+        position: absolute;
+        top: 250px;
+        left: 1800px ;
+    }
+
+    body.dark-theme .discord {
+        background-color: #d1cccc;
+        color: rgb(38, 36, 36);
+    }
+    body.dark-theme .twitter {
+        background-color: #d1cccc;
+        color: rgb(38, 36, 36);
+    }
+    .switch{
+        font-size: 70px;
+        display: flex;
+        width: 0px; 
+        height: 0px;  
+        justify-content: center;  
+        align-items: center;                    /*meme propriété que pour le bouton discord*/
+        position: absolute;
+        top: 350px;
+        left: 1785px ;
+    }
+
+    .infos {          /*bouton twitter à droite du bouton discord*/
+        font-size: 20px;
+        display: flex;
+        width: 7%; 
+        height: 6%;  
+        justify-content: center;  
+        align-items: center;                    /*meme propriété que pour le bouton discord*/
+        position: absolute;
+        top: 430px;
+        left: 1585px ;
+    }
+    
+    .formulaire {          /*bouton twitter à droite du bouton discord*/
+        font-size: 20px;
+        display: flex;
+        width: 7%; 
+        height: 6%;  
+        justify-content: center;  
+        align-items: center;                    /*meme propriété que pour le bouton discord*/
+        position: absolute;
+        top: 430px;
+        left: 1735px ;
+    }
+
+    .autres {          /*bouton twitter à droite du bouton discord*/
+        font-size: 20px;
+        display: flex;
+        width: 7%; 
+        height: 6%;  
+        justify-content: center;  
+        align-items: center;                    /*meme propriété que pour le bouton discord*/
+        position: absolute;
+        top: 430px;
+        left: 1885px ;
+    }
+
+    /* Changer la couleur du texte */
+h2 {
+    color: rgb(255, 255, 255); /* Change la couleur du texte en noir */
+    font-size: larger;
+}
+
+
+body.dark-theme h2 {
+    color: rgb(0, 0, 0); /* Change la couleur du texte en blanc */
+}
+
+body.dark-theme .sorties {
+    color: black;
+    border-color: black; /* Bordure en blanc */
+}
+
+
+    
+
+    
+
+    .barre {        /*barre de recherche */
+        position: absolute;
+        color: rgb(8, 8, 8);
+        top: 100px;
+        right: 30px;   /*µposition de la barre*/
+        size-adjust: 40%;  /*sa taille*/
+        opacity: 0.8;  /*son opacité (pour voir le fond) */
+    }
+
+    body.dark-theme input[type="text"] {
+        background-color: #d1cccc;
+        color: rgb(0, 0, 0);
+    }
+
+    input[type="text"] {        /*pour saisir des données ( dans ce cas un texte)*/
+        padding: 15px;      /* taille du bloc du texte */
+        font-size: 16px;  
+        border: solid 1px #000000;         /* Bordure blanche*/
+        border-radius: 5px 0 0 5px;             /* Bordures arrondies pour les coins gauches seulement */
+        outline: none;               /* Retire l'effet de contours */
+        width: 250px;               /* Largeur de la barre */
+        background-color: black;    
+        color: white;       
+    }
+    
+    button { 
+        padding: 15px 15px;             /* taille du bouton de recherhche */
+        background-color: #333;     
+        font-size: 15px;         
+        border: solid 1px #000000;        
+        border-radius: 0 5px 5px 0;     /* Bordures arrondies pour les coins droites seulement */
+        cursor: pointer;           /* Changement du curseur à pointer lorsqu'on survole la souris */
+    }
+
+    body.dark-theme button {
+        background-color: #d1cccc;
+        color: rgb(0, 0, 0);
+        cursor: pointer
+    }
+    
+    button:hover { 
+        background-color: #555; /* Couleur de fond plus claire au survol de la souris */
+    }
+    
+    body.dark-theme button:hover { 
+        background-color: #555; /* Couleur de fond plus claire au survol de la souris */
+    }
+    
+    .manga {
+        display: flex; 
+        align-items: flex-start;    /*pour que les mangas commencent a gauche */
+        gap: 30px;    /*espace entre chaque mangas*/
+    }
+    
+    .bloc {         /*ce sont tous les réglages pour les mangas*/
+        margin-left: 40px;
+        margin-top: 100px;
+        position: relative;
+        width: 300px;
+        height:500px;
+        overflow: hidden;       /*ne pas avoir les barres de navigation (tout ce qui dépasse du bloc est invisible)*/  
+        border-radius: 5px;     /* Bordures arrondies pour tous les coins*/
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /*ombre de la box*/
+        cursor: pointer;
+    }
+
+    
+    
+    .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;  /*Remplit le conteneur tout en gardant l'aspect de l'image*/
+        filter: blur(6px);   /*l'image est floutée de base*/
+        transition: filter 0.3s ease;       /*lorsque que la souris survole l'image, la transition se fait en 0,3 seconde*/
+    }
+    
+    .bloc:hover .image {
+        filter: blur(0px);      /*la transition est que l'image n'est plus floutée lorsque qu'on survole l'image*/
+    }
+    
+    .marche {               /*le manga qui marche*/
+        position: absolute;  
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;        /*mmettre le texte au milieu */
+        align-items: center;            /*pareil mais verticalement*/
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        text-shadow:                /*l'ombre du texte*/
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,  
+        -1px 1px 0 #000,  
+        1px 1px 0 #000;
+        font-size: 40px;        /*sa taille*/
+        opacity: 0;             /*le texte est invisible tant que l'on ne le survole pas*/
+        transition: opacity 0.3s ease;      /*transition vers apparition du texte*/
+    }
+    
+    .bloc:hover .marche {
+        opacity: 1;         /*le texte s'affiche lorsque l'on survole l'image */
+    }
+    
+    .arret {                /*pareil que pour "marche" mais les mangas qu ne marchent pas*/
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(31, 25, 25, 0.304);
+        color: rgb(255, 0, 0);  /*couleur rouge du texte*/
+        text-shadow:
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,  
+        -1px 1px 0 #000,  
+        1px 1px 0 #000;
+        font-size: 50px;
+        opacity: 0; 
+        transition: opacity 0.3s ease;
+        
+    }
+    
+    .bloc:hover .arret {    
+        opacity: 1; 
+    }
+
+.bloc2 {                    /*bloc en dessous des mangas pour afficher les infos */
+    display: flex;
+    gap: 70px;                  /*espace entre chaque bloc*/
+    margin-top: 5px;
+    margin-left: 40px;
+
+}
+
+
+
+.info {                         
+    width: 300px;
+    text-align: center;
+    background-color: #000;
+    color: white;
+    padding: 0px 0;
+    border-radius: 0 0 10px 10px;       /* Bordures arrondies pour les coins bas seulement */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme info{
+    background-color: #d1cccc;
+    color: black;
+
+}
+
+.bloc3 {                        /*pareil pour les blocs des mangas d'en bas*/
+    display: flex;
+    gap: 70px;
+    margin-top: 10px;
+    margin-left: 40px;
+
+
+}
+
+
+
+.pagination {           /* style général pour le conteneur de la pagination */
+    display: flex;         
+    justify-content: center;            
+    padding: 10px 0;            
+    margin-top: 20px;       
+    margin-bottom: 20px;            
+    background-color: #0d0d0d;      /* couleur de fond pour la pagination*/
+}
+
+
+.pagination span {      /*style pour chaque élément de la pagination */
+    color: white;            /* couleur du texte pour les éléments de pagination */
+    padding: 10px 15px;
+    margin: 0 5px; 
+    background-color: #333; /* couleur de fond par défaut pour les éléments de pagination */
+    border-radius: 5px; 
+    transition: background-color 0.3s; /*animation pour le changement de couleur de fond */
+}
+
+
+.pagination span:hover {        /* style au survol d'un élément de pagination */
+    background-color: #0d0d0d; /*change la couleur de fond au survol */
+}
+
+
+.pagination .active {           /*style pour l'élément de pagination active */
+    background-color: #891313;           /* couleur de fond pour la page active */
+    color: white;               /* couleur du texte pour la page active */
+}
+
+body.dark-theme .pagination {
+    background-color: #d1cccc;
+    color: rgb(38, 36, 36);
+}
+
+body.dark-theme .pagination span{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+body.dark-theme .pagination .active{
+    background-color: #8913134f;
+    color: rgb(0, 0, 0);
+}
+
+
+
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+}
+
+body.dark-theme .footer {
+    background-color: #d1cccc;
+    color: rgb(38, 36, 36);
+}
+
+.footer p {
+    margin: 0px 0;
+}
+
+.footer a {
+    color: rgb(0, 162, 255);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Pour les tablettes - écrans entre 768px et 1024px */
+@media (max-width: 768px) {
+    *{
+        overflow-x: hidden; 
+    }
+
+    body {
+        transform: scale(0.9); /* Réduction légère du zoom */
+        width: 100vw;
+        height: auto;
+    }
+
+    .sorties {
+        width: auto;
+        left: auto;
+        top: auto;
+        position: relative;
+        margin: 10px;
+        text-align: center;
+    }
+
+    .barre {
+        position: static; /* Place la barre sous les boutons de réseaux sociaux */
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .manga {
+        flex-direction: column; /* Change la disposition des mangas à la verticale */
+        align-items: center;
+        gap: 15px;
+    }
+
+    .bloc {
+        width: 80%; /* Réduire la taille des blocs sur les tablettes */
+    }
+
+    .info {
+        font-size: 16px; /* Taille ajustée du texte sous les images */
+    }
+}
+
+
